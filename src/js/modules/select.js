@@ -1,8 +1,6 @@
 const castomSelect = () => {
     const select = document.getElementById('select'); //родительский элемент
     const selectHeader = select.querySelector('.select__header'); //кнопка развернуть/свернуть варианты выбора
-    const selectBody = select.querySelector('.select__body');//элемент с вариантами выбора
-    const selectIcon = select.querySelector('.select__icon');//иконка
     const selectResult = select.querySelector('.select__result');//поле с результатом выбора
     const selectOptions = select.querySelectorAll('.select__option')//все варианты выбора
     let result = '';//поле с результатом для дальнейшей работы в js
@@ -17,22 +15,23 @@ const castomSelect = () => {
             e.target.classList.add('select__option_active')//добавляем активный класс на выбранный элемент
             result = e.target.innerHTML//перезаписываем результат
             selectResult.innerHTML = result//записываем в Html элемент
-        }
+        } 
+        //закрытие селекта
+        select.classList.remove('select_active')//убираем активный класс на селекте
+        document.removeEventListener('click', selectOption)//убираем обработчик
+        isOpen = false
     }
 
-    const openSelect = () => {//функция открытия селекта
-        if (!isOpen) {//если закрыт
-            selectBody.style.display = 'block'//установка дисплей блок 
-            selectIcon.style.transform = 'rotate(180deg)'//разворот иконки
-            selectHeader.classList.add('select__header_active')//активный класс на шапку селекта
-            selectBody.addEventListener('click', selectOption)//подключение обработчика на выбор
+    const openSelect = (e) => {//функция открытия селекта
+        if (isOpen) {
+            select.classList.remove('select_active')//убираем активный класс на селекте
+            document.removeEventListener('click', selectOption)//убираем обработчик
         } else {
-            selectBody.style.display = 'none'//установка дисплей none 
-            selectIcon.style.transform = 'rotate(0)'////разворот иконки
-            selectHeader.classList.remove('select__header_active')//убраем активный класс с шапки селекта
-            selectBody.removeEventListener('click', selectOption)//убираем обработчик
+            e.stopPropagation()//остановить погружение и всплытие
+            select.classList.add('select_active')//активный класс на селект
+            document.addEventListener('click', selectOption)//подключение обработчика на выбор
         }
-        isOpen = !isOpen//изменени состояния на противоположное
+        isOpen = !isOpen
     }
 
     selectHeader.addEventListener('click', openSelect)//запуск

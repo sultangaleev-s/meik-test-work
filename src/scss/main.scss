@@ -1,16 +1,15 @@
 *{
     box-sizing: border-box;
-    font-size: var(--fs-text-md);
     margin: 0;
     padding: 0;
 }
 
 body {
-    margin: 0 var(--spacing-lg);
+    margin: 0 $spacing-lg;
     font-family: $font-family;
-    font-size: var(--fs-text-md);
+    font-size: $fs-text-md;
     font-weight: $fw-regular;
-    line-height: var(--lh-text-md);
+    line-height: $lh-text-md;
     color: $color-black;
     background-color: $color-white;
 }
@@ -24,6 +23,7 @@ a {
 }
 
 button {
+    font-size: $fs-text-md;
     background-color: transparent;
     border: none;
     cursor: pointer;
@@ -32,17 +32,25 @@ button {
 
 .container {
     margin: 0 auto;
-    max-width: var(--max-width-container);
-    min-width: var(--min-width-container);
+    max-width: $max-width-desktop;
+    min-width: $min-width-desktop;
 }
 
 .main-container {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    gap: var(--grid-gap);
+    gap: 32px;
 }
 
 @media (max-width: 1199px) {
+    body {
+        margin: 0 $spacing-sm;
+    }
+
+    .container {
+        max-width: $max-width-tablet;
+        min-width: $min-width-tablet;
+    }
 
     .main-container {
         grid-template-columns: repeat(8, 1fr);
@@ -50,76 +58,67 @@ button {
 }
 
 @media (max-width: 735px) {
+    body {
+        margin: 0 $spacing-xxs;
+    }
+
+    .container {
+        max-width: $max-width-mobile;
+        min-width: $min-width-mobile;
+    }
 
     .main-container {
         grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
     }
 }
 
 .section {
-    margin-bottom: var(--spacing-section);
+    margin-bottom: $spacing-section;
 }
 
 .section-header {
-    font-size: var(--fs-header-lg);
+    font-size: $fs-header-lg;
     font-weight: $fw-bold;
-    line-height: var(--lh-header-lg);
-    margin-bottom: var(--spacing-md);
+    line-height: $lh-header-lg;
+    margin-bottom: $spacing-md;
 }
 
 .section-subheader {
-    font-size: var(--fs-header-md);
+    font-size: $fs-header-md;
     font-weight: $fw-medium;
-    line-height: var(--lh-header-md);
-    margin-bottom: var(--spacing-md);
+    line-height: $lh-header-md;
+    margin-bottom: $spacing-md;
 }
 
-.header-extra-lg {
-    font-size: var(--fs-header-extra-lg);
-    font-weight: $fw-bold;
-    line-height: var(--lh-header-extra-lg);
+@media (max-width: 1199px) {
+    .section-header {
+        margin-bottom: $spacing-xs;
+    }
+    .section-subheader {
+        margin-bottom: $spacing-xs;
+    }
 }
 
-.header-lg {
-    font-size: var(--fs-header-lg);
-    font-weight: $fw-bold;
-    line-height: var(--lh-header-lg);
-}
+@media (max-width: 735px) {
+    .section {
+        margin-bottom: $spacing-section-m;
+    }
 
-.header-md {
-    font-size: var(--fs-header-md);
-    font-weight: $fw-medium;
-    line-height: var(--lh-header-md);
-}
+    .section-header {
+        font-size: $fs-header-lg-m;
+        line-height: $lh-header-lg-m;
+        margin-bottom: $spacing-sm;
+    }
+    
+    .section-subheader {
+        font-size: $fs-header-md-m;
+        line-height: $lh-header-md-m;
+    }
 
-.header-sm {
-    font-size: var(--fs-header-sm);
-    font-weight: $fw-medium;
-    line-height: var(--lh-header-sm);
-}
-
-.text-lead {
-    font-size: var(--fs-text-lead);
-    font-weight: $fw-regular;
-    line-height: var(--lh-text-lead);
-}
-
-.text-lg {
-    font-size: var(--fs-text-lg);
-    font-weight: $fw-regular;
-    line-height: var(--lh-text-lg);
-}
-
-.text-md {
-    font-size: var(--fs-text-md);
-    font-weight: $fw-regular;
-    line-height: var(--lh-text-md);
-}
-
-.text-sm {
-    font-size: var(--fs-text-sm);
-    font-weight: $fw-regular;
-    line-height: var(--lh-text-sm);
+    .section-subheader {
+        margin-bottom: $spacing-xs;
+    }
 }
 
 

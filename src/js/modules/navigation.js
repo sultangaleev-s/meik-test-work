@@ -2,6 +2,20 @@ const navigation = () => {
     const navInit = () => {
         const nav = document.querySelector('.nav') // блок навигации
         const links = nav.querySelectorAll('.nav__link') // все навигационные ссылки
+
+        //плавный скролл
+        links.forEach(link => {//итерация по ссылкам
+          link.addEventListener('click', (e) => { //событие на клик по ссылке
+            e.preventDefault(); //отмена стандартного поведения браузера
+            const id = link.getAttribute('href');//id элемента ссылки
+            document.querySelector(id).scrollIntoView({//скролл
+                behavior: 'smooth',//параметры
+                block: 'start'
+            });
+          });
+        })
+
+        //подсветка активной секции
         const sections = document.querySelectorAll('.section') // все секции
         sections.forEach(section => { // для каждой секции
           if (window.pageYOffset >= section.offsetTop) { // проверяем, если страница прокручена больше, чем расстояние секции от начала страницы
@@ -17,12 +31,8 @@ const navigation = () => {
         })
       }
     navInit() // запуск при загрузке страницы
-    window.addEventListener('scroll', () => {
-    navInit() // запуск при скролле страницы
-    })
-    window.addEventListener('resize', () => {
-    navInit() // запуск при ресайзе страницы
-    })
+    window.addEventListener('scroll', navInit)
+    window.addEventListener('resize', navInit)
 }
 
 export default navigation

@@ -18,41 +18,7 @@
         transform: translateX(0);
     }
 
-    &__close {
-        position: absolute;
-        top: 35px;
-        right: 70px;
-        height: 24px;
-        width: 24px;
-        transition: transform $transition;
-
-        &:hover {
-            transform: scale(1.1);
-        }
-
-        &::before {
-            content: ' ';
-            position: absolute;
-            top: 50%;
-            left: 0;
-            transform: rotate(45deg);
-            width: 24px;
-            height: 2px;
-            background-color: $color-white;
-        }
-
-        &::after {
-            content: ' ';
-            position: absolute;
-            top: 50%;
-            right: 0;
-            transform: rotate(-45deg);
-            width: 24px;
-            height: 2px;
-            background-color: $color-white;
-        }
-    }
-
+    
     &__info {
         width: 740px;
         height: 100%;
@@ -67,94 +33,148 @@
         margin: 0 64px;
     }
     
-    @media (max-width: 1199px) {
-        &__info {
-            width: 640px;
-        }
-
-        &__info-left {
-            text-align: center;
-            margin: 0 32px;
-        }
-
-        &__close {
-            top: 25px;
-            right: 25px;
-        }
-    }
     
-    @media (max-width: 735px) {
-        & {
-            padding: 8px;
-        }
-
-        &__info {
-            width: 100%;
-        }
-
-        &__info-left {
-            margin: 0;
-        }
-
-        &__info-right {
-            padding: 0 10px;
-        }
-
-        &__logo {
-            position: absolute;
-            left: 15px;
-            top: 30px;
-        }
-
-        &__head-text {
-            margin-bottom: 20px;
-            margin-left: 60px;
-        }
-
-        &__close {
-            &::before,
-            &::after {
-                background-color: $color-black;
-            }
-        }
-
-        &__info {
-            justify-content: center;
-        }
-    }
-
     &__info-right {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
     }
-
+    
     &__head-text {
         margin-bottom: 60px;
         color: $color-gray;
     }
-
+    
     &__header {
         margin-bottom: 24px;
+        font-size: $fs-header-lg;
+        font-weight: $fw-bold;
+        line-height: $lh-header-lg;
     }
-
+    
     &__text {
         max-width: 384px;
         margin-bottom: 32px;
-
+        
         span {
             display: block;
             margin: 3px 0 3px 10px;
         }
     }
-
+    
+    &__number {
+        font-size: $fs-header-sm;
+        font-weight: $fw-medium;
+        line-height: $lh-header-sm;
+    }
+    
     &__link {
         display: flex;
         align-items: center;
         color: $color-blue;
+        
+    }
+    
+    &__link-ico {
+        margin-right: 24px;
+    }
+}
 
-        img {
-            margin-right: 24px;
+.burger-menu__close {
+    position: absolute;
+    top: 35px;
+    right: 70px;
+    height: 24px;
+    width: 24px;
+    transition: transform $transition;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+
+    &::before {
+        content: ' ';
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: rotate(45deg);
+        width: 24px;
+        height: 2px;
+        background-color: $color-white;
+    }
+
+    &::after {
+        content: ' ';
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: rotate(-45deg);
+        width: 24px;
+        height: 2px;
+        background-color: $color-white;
+    }
+}
+
+@media (max-width: 1199px) {
+    .burger-menu {
+        &__info {
+            width: 640px;
+        }
+    
+        &__info-left {
+            text-align: center;
+            margin: 0 32px;
+        }
+    
+        &__close {
+            top: 25px;
+            right: 25px;
+        }
+    }
+}
+
+@media (max-width: 735px) {
+    .burger-menu {
+        padding: 8px;
+    
+        &__info {
+            width: 100%;
+        }
+    
+        &__info-left {
+            margin: 0;
+        }
+    
+        &__info-right {
+            padding: 0 10px;
+        }
+    
+        &__logo {
+            position: absolute;
+            left: 15px;
+            top: 30px;
+        }
+    
+        &__head-text {
+            margin-bottom: 20px;
+            margin-left: 60px;
+        }
+    
+        &__header {
+            font-size: $fs-header-lg-m;
+            line-height: $lh-header-lg-m;
+        }
+    
+        
+        &__info {
+            justify-content: center;
+        }
+    }
+
+    .burger-menu__close {
+        &::before,
+        &::after {
+            background-color: $color-black;
         }
     }
 }

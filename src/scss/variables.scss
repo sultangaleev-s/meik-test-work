@@ -1,32 +1,20 @@
-:root {
-    --fs-header-extra-lg: 48px;
-    --fs-header-lg: 32px;
-    --fs-header-md: 24px;
-    --fs-header-sm: 18px;
-    --fs-text-lead: 24px;
-    --fs-text-lg: 18px;
-    --fs-text-md: 16px;
-    --fs-text-sm: 14px;
 
-    --lh-header-extra-lg: 56px;
-    --lh-header-lg: 40px;
-    --lh-header-md: 32px;
-    --lh-header-sm: 28px;
-    --lh-text-lead: 32px;
-    --lh-text-lg: 28px;
-    --lh-text-md: 24px;
-    --lh-text-sm: 20px;
+$spacing-section: 80px;
+$spacing-section-m: 50px;
+$spacing-lg: 64px;
+$spacing-md: 48px;
+$spacing-sm: 32px;
+$spacing-xs: 24px;
+$spacing-xxs: 16px;
 
-    --spacing-section: 80px;
-    --spacing-lg: 64px;
-    --spacing-md: 48px;
-    --spacing-sm: 32px;
+$max-width-desktop: 1312px;
+$min-width-desktop: 1072px;
 
-    --max-width-container: 1312px;
-    --min-width-container: 1072px;
+$max-width-tablet: 928px;
+$min-width-tablet: 672px;
 
-    --grid-gap: 32px;
-}
+$max-width-mobile: 424px;
+$min-width-mobile: 296px;
 
 $color-black: #1B1B1B;
 $color-white: #fff;
@@ -40,6 +28,24 @@ $color-body-bg: #F2F2F2;
 
 $font-family: 'GraphikLCG','Times New Roman', Times, serif;
 
+$fs-header-extra-lg: 48px;
+$fs-header-lg: 32px;
+$fs-header-md: 24px;
+$fs-header-sm: 18px;
+$fs-text-lead: 24px;
+$fs-text-lg: 18px;
+$fs-text-md: 16px;
+$fs-text-sm: 14px;
+
+$lh-header-extra-lg: 56px;
+$lh-header-lg: 40px;
+$lh-header-md: 32px;
+$lh-header-sm: 28px;
+$lh-text-lead: 32px;
+$lh-text-lg: 28px;
+$lh-text-md: 24px;
+$lh-text-sm: 20px;
+
 $fw-bold: 700;
 $fw-medium: 500;
 $fw-regular: 400;
@@ -48,50 +54,14 @@ $transition: .3s;
 
 $max-width-text: 592px;
 
-@media (max-width: 1199px) {
-    :root {
-        --spacing-section: 50px;
-        --spacing-lg: 32px;
-        --spacing-md: 24px;
+$fs-header-extra-lg-m: 32px;
+$fs-header-lg-m: 28px;
+$fs-header-md-m: 20px;
 
-        --max-width-container: 928px;
-        --min-width-container: 672px;
-    }
-}
+$lh-header-extra-lg-m: 40px;
+$lh-header-lg-m: 36px;
+$lh-header-md-m: 28px;
 
-@media (max-width: 735px) {
-    :root {
-        --fs-header-extra-lg: 32px;
-        --lh-header-extra-lg: 40px;
 
-        --fs-header-lg: 28px;
-        --lh-header-lg: 36px;
 
-        --fs-header-md: 20px;
-        --lh-header-md: 28px;
 
-        --fs-header-sm: 18px;
-        --lh-header-sm: 28px;
-
-        --fs-text-lead: 20px;
-        --lh-text-lead: 28px;
-
-        --fs-text-lg: 18px;
-        --lh-text-lg: 28px;
-
-        --fs-text-md: 16px;
-        --lh-text-md: 24px;
-
-        --fs-text-sm: 14px;
-        --lh-text-sm: 20px;
-
-        --spacing-section: 30px;
-        --spacing-lg: 16px;
-        --spacing-md: 12px;
-
-        --max-width-container: 424px;
-        --min-width-container: 296px;
-
-        --grid-gap: 24px
-    }
-}

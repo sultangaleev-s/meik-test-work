@@ -7,82 +7,94 @@
 
 
     <section id="grid" class="section grid">
-        <h2 class="grid__header section-header">Сетка</h2>
+        <h2 class="section-header">Сетка</h2>
         <p class="grid__text">Задание предполагает адаптивную вёрстку. Используется 3 состояния в зависимости от устройства. Сетка «резиновая» — переменной ширины.</p>
-        <h3 class="header-md grid__table-header">Десктоп (1200+)</h3>
+        <h3 class="grid__table-header">Десктоп (1200+)</h3>
         <div class="grid__table-info-head">
-            <span class="text-sm">Контент</span>
-            <span class="text-sm">Колонок</span>
-            <span class="text-sm">Ширина колонки</span>
-            <span class="text-sm">Межколонник</span>
+            <span class="grid__table-info">Контент</span>
+            <span class="grid__table-info">Колонок</span>
+            <span class="grid__table-info">Ширина колонки</span>
+            <span class="grid__table-info">Межколонник</span>
         </div>
         <div class="grid__table-value-head">
-            <span class="text-lead">1072-1312</span>
-            <span class="text-lead">12</span>
-            <span class="text-lead">60-80</span>
-            <span class="text-lead">32</span>
+            <span class="grid__table-value">1072-1312</span>
+            <span class="grid__table-value">12</span>
+            <span class="grid__table-value">60-80</span>
+            <span class="grid__table-value">32</span>
         </div>
         <div class="grid__table">
             <img src="@img/note.png" alt="desktop" class="grid__img">
         </div>
 
-        <h3 class="header-md grid__table-header">Планшет (736+)</h3>
+        <h3 class="grid__table-header">Планшет (736+)</h3>
         <div class="grid__table-info-head">
-            <span class="text-sm">Контент</span>
-            <span class="text-sm">Колонок</span>
-            <span class="text-sm">Ширина колонки</span>
-            <span class="text-sm">Межколонник</span>
+            <span class="grid__table-info">Контент</span>
+            <span class="grid__table-info">Колонок</span>
+            <span class="grid__table-info">Ширина колонки</span>
+            <span class="grid__table-info">Межколонник</span>
         </div>
         <div class="grid__table-value-head">
-            <span class="text-lead">672-928</span>
-            <span class="text-lead">8</span>
-            <span class="text-lead">56-88</span>
-            <span class="text-lead">32</span>
+            <span class="grid__table-value">672-928</span>
+            <span class="grid__table-value">8</span>
+            <span class="grid__table-value">56-88</span>
+            <span class="grid__table-value">32</span>
         </div>
         <div class="grid__table grid__table-tablet">
             <img src="@img/tablet.png" alt="tablet" class="grid__img">
         </div>
 
-        <h3 class="header-md grid__table-header">Телефон (320+)</h3>
+        <h3 class="grid__table-header">Телефон (320+)</h3>
         <div class="grid__table-info-head">
-            <span class="text-sm">Контент</span>
-            <span class="text-sm">Колонок</span>
-            <span class="text-sm">Ширина колонки</span>
-            <span class="text-sm">Межколонник</span>
+            <span class="grid__table-info">Контент</span>
+            <span class="grid__table-info">Колонок</span>
+            <span class="grid__table-info">Ширина колонки</span>
+            <span class="grid__table-info">Межколонник</span>
         </div>
         <div class="grid__table-value-head">
-            <span class="text-lead">296–424</span>
-            <span class="text-lead">4</span>
-            <span class="text-lead">56-88</span>
-            <span class="text-lead">24</span>
+            <span class="grid__table-value">296–424</span>
+            <span class="grid__table-value">4</span>
+            <span class="grid__table-value">56-88</span>
+            <span class="grid__table-value">24</span>
         </div>
         <div class="grid__table grid__table-phone">
-            <img src="@img/phone.png" alt="phone" class="grid__img">
+            <img src="@img/phone.png" alt="phone" class="grid__img-phone">
         </div>
     </section>
 
 
     <section id="text-types" class="section text-types">
         <h2 class="section-header">Типографика</h2>
-        <p class="text text-types__text">Используется шрифт Graphik. На телефонах стили типографики переопределяются</p>
-        <div class="text-types__viewports-block">
-            <span class="text-types__viewport">
-                Десктоп
-            </span>
-            <span class="text-types__viewport">
-                Телефон
-            </span>
-            <span class="text-types__marker"></span>
-        </div>
-        <div class="text-types__text-block">
-            <h1 class="header-extra-lg text-types__text-item">Текст заголовка</h1>
-            <h2 class="header-lg text-types__text-item">Текст заголовка</h2>
-            <h3 class="header-md text-types__text-item">Текст заголовка</h3>
-            <h4 class="header-sm text-types__text-item">Текст заголовка</h4>
-            <p class="text-lead text-types__text-item">Текст лида</p>
-            <p class="text-bold text-types__text-item">Крупный текст</p>
-            <p class="text-md text-types__text-item">Основной текст</p>
-            <p class="text-sm text-types__text-item">Вспомогательный текст</p>
+        <p class="text-types__text">Используется шрифт Graphik. На телефонах стили типографики переопределяются</p>
+        <div class="tabs text-types__content" id="tabs">
+            <div class="tabs__btns-block">
+                <button class="tabs__btn tabs__btn_active" data-tabs="desktop">
+                    Десктоп
+                </button>
+                <button class="tabs__btn" data-tabs="phone">
+                    Телефон
+                </button>
+                <span class="tabs__marker"></span>
+            </div>
+            <div class="tabs__content tabs__content_active" data-content="desktop">
+                <h1 class="text-types__header-extra-lg text-types__text-item">Текст заголовка</h1>
+                <h2 class="text-types__header-lg text-types__text-item">Текст заголовка</h2>
+                <h3 class="text-types__header-md text-types__text-item">Текст заголовка</h3>
+                <h4 class="text-types__header-sm text-types__text-item">Текст заголовка</h4>
+                <p class="text-types__text-lead text-types__text-item">Текст лида</p>
+                <p class="text-types__text-bold text-types__text-item">Крупный текст</p>
+                <p class="text-types__text-md text-types__text-item">Основной текст</p>
+                <p class="text-types__text-sm text-types__text-item">Вспомогательный текст</p>
+            </div>
+            <div class="tabs__content" data-content="phone">
+                <h1 class="text-types__header-extra-lg-m text-types__text-item">Текст заголовка</h1>
+                <h2 class="text-types__header-lg-m text-types__text-item">Текст заголовка</h2>
+                <h3 class="text-types__header-md-m text-types__text-item">Текст заголовка</h3>
+                <h4 class="text-types__header-sm text-types__text-item">Текст заголовка</h4>
+                <p class="text-types__text-lead text-types__text-item">Текст лида</p>
+                <p class="text-types__text-bold text-types__text-item">Крупный текст</p>
+                <p class="text-types__text-md text-types__text-item">Основной текст</p>
+                <p class="text-types__text-sm text-types__text-item">Вспомогательный текст</p>
+            </div>
         </div>
     </section>
 
@@ -92,34 +104,77 @@
         
         <div class="ui__item">
             <h3 class="section-subheader">Текстовое поле</h3>
-            <div class="input-box" id="input-box">
-                <input type="text" id="input" required>
-                <span class="input-box__placeholder">E-mail</span>
-                <span class="input-box__error">Error: E-mail is not valid!</span>
-            </div>
-        </div>
-
-        <div class="ui__item">
-            <h3 class="section-subheader">Выпадающий список</h3>
-            <div class="select" id="select">
-                <p class="text-md ui__text">Компонент состоит из текстового поля и выпадающей подсказки</p>
-                <button class="select__header">
-                    <span class="select__result">Выбeрите что-нибудь</span>
-                    <span class="select__icon"></span>
-                </button>
-                <div class="select__body">
-                    <button class="select__option">Пункт первый</button>
-                    <button class="select__option">Пункт второй</button>
-                    <button class="select__option">Пункт третий</button>
-                    <button class="select__option">Пункт четвертый</button>
+            <div class="ui__input-group">
+                <div class="input-box" id="input-box">
+                    <input type="text" id="input" required>
+                    <span class="input-box__placeholder">E-mail</span>
+                    <span class="input-box__error">Error: E-mail is not valid!</span>
+                </div>
+                <div class="input-box input-box_hover">
+                    <input type="text" required>
+                    <span class="input-box__placeholder">E-mail</span>
+                    <span class="input-box__error">Error: E-mail is not valid!</span>
+                </div>
+                <div class="input-box input-box_active">
+                    <input type="text" required value="office@make.st">
+                    <span class="input-box__placeholder">E-mail</span>
+                    <span class="input-box__error">Error: E-mail is not valid!</span>
+                </div>
+                <div class="input-box input-box_invalid">
+                    <input type="text" required>
+                    <span class="input-box__placeholder">E-mail</span>
+                    <span class="input-box__error">Error: E-mail is not valid!</span>
                 </div>
             </div>
         </div>
 
         <div class="ui__item">
+            <h3 class="section-subheader">Выпадающий список</h3>
+            <p class="ui__text">Компонент состоит из текстового поля и выпадающей подсказки</p>
+           <div class="ui__select-group">
+                <div class="select" id="select">
+                    <button class="select__header">
+                        <span class="select__result">Выбeрите что-нибудь</span>
+                        <span class="select__icon"></span>
+                    </button>
+                    <div class="select__body">
+                        <button class="select__option">Пункт первый</button>
+                        <button class="select__option">Пункт второй</button>
+                        <button class="select__option">Пункт третий</button>
+                        <button class="select__option">Пункт четвертый</button>
+                    </div>
+                </div>
+                
+                <div class="select select_active">
+                    <button class="select__header">
+                        <span class="select__result">Выбeрите что-нибудь</span>
+                        <span class="select__icon"></span>
+                    </button>
+                </div>
+
+                <div class="select select_active">
+                    <button class="select__header">
+                        <span class="select__result">Выбeрите что-нибудь</span>
+                        <span class="select__icon"></span>
+                    </button>
+                    <div class="select__body">
+                        <button class="select__option">Пункт первый</button>
+                        <button class="select__option">Пункт второй</button>
+                        <button class="select__option">Пункт третий</button>
+                        <button class="select__option">Пункт четвертый</button>
+                    </div>
+                </div>
+           </div>
+        </div>
+
+        <div class="ui__item">
             <h3 class="section-subheader">Кнопка</h3>
-            <button class="button ui__button">Отправить</button>
-            <button class="button" disabled>Отправить</button>
+            <div class="ui__button-group">
+                <button class="button">Отправить</button>
+                <button class="button button_hover">Отправить</button>
+                <button class="button button_active">Отправить</button>
+                <button class="button" disabled>Отправить</button>
+            </div>
         </div>
 
         <div class="ui__item">

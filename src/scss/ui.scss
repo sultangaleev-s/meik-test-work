@@ -3,9 +3,16 @@
     top: 0;
     left: 0;
 
+    &_hover input {
+        border-color: $color-blue !important;
+    }
+
+    &_active input {
+        border-bottom: 4px solid $color-blue !important;
+    }
     
     & input {
-        width: 280px;
+        width: 100%;
         border: none;
         border-bottom: 2px solid $color-dark-gray;
         padding-bottom: 6px;
@@ -18,7 +25,7 @@
     
     & input:focus {
         outline: none;
-        border-color: $color-blue;
+        border-bottom: 4px solid $color-blue;
     }
     
     &__placeholder {
@@ -31,7 +38,6 @@
     & input:valid ~ &__placeholder{
         transform: translateY(-20px);
         font-size: 12px;
-        line-height: 20px;
         color: $color-gray;
     }
 
@@ -40,22 +46,21 @@
         position: absolute;
         left: 0;
         bottom: -30px;
-        font-size: var(--fs-text-sm);
+        font-size: $fs-text-sm;
+    }
+
+    &_invalid &__placeholder{
+        transform: translateY(-20px);
+        font-size: 12px;
     }
 
     &_invalid input {
-        border-color: $color-red !important;
+        border-bottom: 4px solid $color-red !important;
     }
 
     &_invalid span {
         color: $color-red !important;
         opacity: 1;
-    }
-
-    @media (max-width: 735px) {
-        & input {
-            width: 250px;
-        }
     }
 }
 
@@ -63,8 +68,6 @@
     position: relative;
     left: 0;
     top: 0;
-    width: 280px;
-    z-index: 200;
     
     &__header {
         border-bottom: 2px solid $color-dark-gray;
@@ -74,14 +77,10 @@
         width: 100%;
         text-align: left;
     }
-
+    
     &__header:hover, &__header:focus {
         border-color: $color-blue;
         outline: none;
-    }
-
-    &__header_active {
-        border-bottom-color: $color-blue;
     }
 
     &__icon {
@@ -94,7 +93,7 @@
         background-position: center center;
         background-size: cover;
     }
-
+    
     &__body {
         display: none;
         width: 100%;
@@ -102,8 +101,9 @@
         top: 100%;
         left: 0;
         background-color: $color-white;
+        z-index: 300;
     }
-
+    
     &__option {
         padding: 8px 24px;
         cursor: pointer;
@@ -111,25 +111,31 @@
         width: 100%;
         text-align: left;
     }
-
+    
     &__option:hover, &__option:focus {
         background-color: $color-blue;
         color: $color-white;
         outline: none;
     }
-
+    
     &__option_active {
         color: $color-blue;
     }
-
+    
     &__option:not(:last-child) {
         margin-bottom: 16px;
     }
 
-    @media (max-width: 735px) {
-        & {
-            width: 250px;
-        }
+    &_active &__body {
+        display: block;
+    }
+
+    &_active &__header {
+        border-bottom-color: $color-blue;
+    }
+    
+    &_active &__icon {
+        transform: rotate(180deg);
     }
 }
 
@@ -143,6 +149,15 @@
     color: $color-white;
     transition: opacity .3s ease-in;
     z-index: 100;
+    max-width: 148px;
+
+    &_hover {
+        background-image: linear-gradient(225deg, #DD80ED 0%, #3D28E3 100%);
+    }
+
+    &_active {
+        background: linear-gradient(206.57deg, #DD80ED 0%, #3D28E3 83.33%);
+    }
 
     &::before {
         content: ' ';
@@ -308,8 +323,13 @@
         top: 0;
         text-align: left;
         color: $color-gray;
+        font-weight: $fw-bold;
         transition: color $transition;
         cursor: pointer;
+    }
+
+    &__info_active {
+        color: $color-blue !important;
     }
 
     &__info:hover,
@@ -343,4 +363,71 @@
     &__icon_active {
         transform: rotate(180deg);
     }
+}
+
+.tabs {
+    &__btns-block {
+        width: 100%;
+        position: relative;
+        left: 0;
+        top: 0;
+        padding-bottom: 14px;
+        border-bottom: 1px solid $color-light-gray;
+        margin-bottom: $spacing-md;
+    }
+
+    &__btn:not(:last-child) {
+        margin-right: 32px;
+    }
+
+    &__btn {
+        color: $color-gray;
+        transition: color $transition;
+        font-weight: $fw-bold;
+    }
+
+    &__btn_active {
+        color: $color-black;
+    }
+
+    &__content {
+        display: none;
+    }
+
+    &__content_active {
+        display: block;
+        animation: tabAction 1s; 
+    }
+
+    @keyframes tabAction {
+    from {opacity: 0;}
+    to {opacity: 1;}
+    }
+
+    &__marker {
+        position: absolute;
+        bottom: -1px;
+        left: 0px;
+        width: 66px;
+        height: 2px;
+        background-color: $color-blue;
+        transition: transform $transition;
+    }
+}
+
+@media (max-width: 1199px) {
+    .tabs {
+        &__btns-block {
+            margin-bottom: $spacing-xs;
+        }
+    }
+}
+
+@media (max-width: 735px) {
+    .tabs {
+        &__btns-block {
+            margin-bottom: $spacing-xxs;
+        }
+    }
+    
 }

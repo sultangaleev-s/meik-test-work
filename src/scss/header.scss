@@ -8,8 +8,6 @@
     }
 }
 
-
-
 .logo {
     display: flex;
     align-items: center;
@@ -38,8 +36,8 @@
 
     &__title,
     &__subtitle {
-        font-size: var(fs-text-sm);
-        line-height: var(--lh-text-sm);
+        font-size: $fs-text-sm;
+        line-height: $lh-text-sm;
     }
 
     &__title {

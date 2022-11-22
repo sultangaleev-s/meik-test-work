@@ -4,6 +4,7 @@ import castomSelect from "./modules/select.js"
 import accardeonControl from './modules/accardeon.js'
 import inputCheck from './modules/input.js'
 import navigation from './modules/navigation.js'
+import tabs from './modules/tabs.js'
 
 flsFunctions.isWebp()
 
@@ -13,4 +14,5 @@ document.addEventListener('DOMContentLoaded', () => {
     castomSelect()
     accardeonControl()
     navigation()
+    tabs()
 })

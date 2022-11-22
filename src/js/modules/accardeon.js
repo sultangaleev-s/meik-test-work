@@ -6,6 +6,7 @@ const accardeonControl = () => {
 
 
     const toggleHandler = () => {
+        toggle.classList.toggle('accardeon__info_active')
         text.classList.toggle('accardeon__text_active') //разворот текста
         icon.classList.toggle('accardeon__icon_active') //разворот иконки
     }
