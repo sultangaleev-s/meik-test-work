@@ -1,0 +1,223 @@
+.content {
+    grid-column: span 9;
+    width: 100%;
+}
+
+@media (max-width: 1199px) {
+    .content {
+        grid-column: span 6;
+    }
+}
+
+@media (max-width: 735px) {
+    .content {
+        grid-column: span 4;
+    }
+}
+
+.parting_word {
+
+    &__header {
+        max-width: $max-width-text;
+        font-size: var(--fs-header-extra-lg);
+        font-weight: $fw-bold;
+        line-height: var(--lh-header-extra-lg);
+        margin-bottom: 16px;
+    }
+
+    &__text-lead {
+        max-width: $max-width-text;
+        font-size: var(--fs-text-lead);
+        line-height: var(--lh-text-lead);
+        margin-bottom: var(--spacing-lg);
+    }
+
+    &__text {
+        max-width: $max-width-text;
+    }
+}
+
+
+
+.grid {
+
+    &__table-header {
+        margin-bottom: var(--spacing-sm);
+    }
+
+    &__text {
+        max-width: $max-width-text;
+        margin-bottom: var(--spacing-md);
+    }
+
+    &__table-info-head,
+    &__table-value-head {
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        gap: var(--grid-gap);
+    }
+
+    &__table-value-head {
+        margin-bottom: var(--spacing-md);
+    }
+
+    &__table {
+        width: 100%;
+        height: 480px;
+        background-color: $color-grid-bg;
+        margin-bottom: var(--spacing-lg);
+    }
+
+    &__table-tablet {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 60px 156px;
+    }
+
+    &__table-phone {
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        padding: 86px 292px 0;
+    }
+
+    &__img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: center center;
+    }
+}
+
+@media (max-width: 1199px) {
+
+    .grid {
+        &__table {
+            height: auto;
+        }
+
+        &__table-tablet {
+            padding: 30px 78px;
+        }
+    
+        &__table-phone {
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            padding: 43px 146px 0;
+        }
+    }
+}
+
+@media (max-width: 735px) {
+    .grid {
+        &__table-tablet {
+            padding: 15px 39px;
+        }
+    
+        &__table-phone {
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            padding: 21px 73px 0;
+        }
+    }
+    
+}
+
+
+.text-types {
+    &__text {
+        max-width: $max-width-text;
+        margin-bottom: var(--spacing-md);
+    }
+
+    &__viewports-block {
+        width: 100%;
+        position: relative;
+        left: 0;
+        top: 0;
+        padding-bottom: 14px;
+        border-bottom: 1px solid $color-light-gray;
+        margin-bottom: var(--spacing-md);
+    }
+
+    &__viewport:nth-child(1) {
+        margin-right: 32px;
+        color: $color-gray;
+    }
+
+    &__viewport:nth-child(2){
+        color: $color-black;
+    }
+
+    &__marker {
+        position: absolute;
+        bottom: -1px;
+        left: 100px;
+        width: 66px;
+        height: 2px;
+        background-color: $color-blue;
+    }
+
+    @media (min-width: 736px) {
+        &__marker {
+            left: 0;
+        }
+        &__viewport:nth-child(1) {
+            color: $color-black;
+        }
+        &__viewport:nth-child(2) {
+            color: $color-gray;
+        }
+    }
+
+    &__text-item:not(:last-child) {
+        margin-bottom: var(--spacing-md);
+    }
+}
+
+.ui {
+    &__item {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: var(--spacing-lg);
+    }
+
+    &__text {
+        margin-bottom: var(--spacing-md);
+    }
+
+    &__button {
+        margin-bottom: 32px;
+    }
+
+    &__check-block {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__check-group {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__check-group:nth-child(1) {
+        margin-right: 32px;
+    }
+
+    &__check-group div:not(:last-child) {
+        margin-bottom: 24px;
+    }
+}
+
+@media (max-width: 1199px) {
+    .ui {
+        &__check-group {
+           margin: 0 0 20px;
+           margin-right: 0;
+        }
+    }
+}

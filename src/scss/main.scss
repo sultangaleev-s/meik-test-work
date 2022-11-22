@@ -1,0 +1,139 @@
+*{
+    box-sizing: border-box;
+    font-size: var(--fs-text-md);
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0 var(--spacing-lg);
+    font-family: $font-family;
+    font-size: var(--fs-text-md);
+    font-weight: $fw-regular;
+    line-height: var(--lh-text-md);
+    color: $color-black;
+    background-color: $color-white;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+
+.container {
+    margin: 0 auto;
+    max-width: var(--max-width-container);
+    min-width: var(--min-width-container);
+}
+
+.main-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: var(--grid-gap);
+}
+
+@media (max-width: 1199px) {
+
+    .main-container {
+        grid-template-columns: repeat(8, 1fr);
+    }
+}
+
+@media (max-width: 735px) {
+
+    .main-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.section {
+    margin-bottom: var(--spacing-section);
+}
+
+.section-header {
+    font-size: var(--fs-header-lg);
+    font-weight: $fw-bold;
+    line-height: var(--lh-header-lg);
+    margin-bottom: var(--spacing-md);
+}
+
+.section-subheader {
+    font-size: var(--fs-header-md);
+    font-weight: $fw-medium;
+    line-height: var(--lh-header-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.header-extra-lg {
+    font-size: var(--fs-header-extra-lg);
+    font-weight: $fw-bold;
+    line-height: var(--lh-header-extra-lg);
+}
+
+.header-lg {
+    font-size: var(--fs-header-lg);
+    font-weight: $fw-bold;
+    line-height: var(--lh-header-lg);
+}
+
+.header-md {
+    font-size: var(--fs-header-md);
+    font-weight: $fw-medium;
+    line-height: var(--lh-header-md);
+}
+
+.header-sm {
+    font-size: var(--fs-header-sm);
+    font-weight: $fw-medium;
+    line-height: var(--lh-header-sm);
+}
+
+.text-lead {
+    font-size: var(--fs-text-lead);
+    font-weight: $fw-regular;
+    line-height: var(--lh-text-lead);
+}
+
+.text-lg {
+    font-size: var(--fs-text-lg);
+    font-weight: $fw-regular;
+    line-height: var(--lh-text-lg);
+}
+
+.text-md {
+    font-size: var(--fs-text-md);
+    font-weight: $fw-regular;
+    line-height: var(--lh-text-md);
+}
+
+.text-sm {
+    font-size: var(--fs-text-sm);
+    font-weight: $fw-regular;
+    line-height: var(--lh-text-sm);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
