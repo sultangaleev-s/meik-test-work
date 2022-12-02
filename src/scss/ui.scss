@@ -327,42 +327,43 @@
         transition: color $transition;
         cursor: pointer;
     }
-
-    &__info_active {
-        color: $color-blue !important;
-    }
-
+    
     &__info:hover,
     &__info:focus {
         color: $color-black;
         outline: none;
     }
-
+    
     &__text {
         max-height: 0;
         overflow: hidden;
         transition: $transition;
     }
-
-    &__text_active {
-        max-height: none;
-        margin: 24px 0 15px;
-    }
-      
+    
     &__icon {
-    position: absolute;
-    right: 0;
-    top: 50%;
-    height: 6px;
-    width: 9px;
-    background-image: url('../img/svgicons/arrow.svg');
-    background-position: center center;
-    background-size: cover;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        height: 6px;
+        width: 9px;
+        background-image: url('../img/svgicons/arrow.svg');
+        background-position: center center;
+        background-size: cover;
     }
 
-    &__icon_active {
-        transform: rotate(180deg);
-    }
+}
+
+.accardeon_active .accardeon__info{
+    color: $color-blue;
+}
+
+.accardeon_active .accardeon__text {
+    max-height: none;
+    margin: 24px 0 15px;
+}
+
+.accardeon_active .accardeon__icon {
+    transform: rotate(180deg);
 }
 
 .tabs {
