@@ -65,17 +65,36 @@
     <section id="text-types" class="section text-types">
         <h2 class="section-header">Типографика</h2>
         <p class="text-types__text">Используется шрифт Graphik. На телефонах стили типографики переопределяются</p>
-        <div class="tabs text-types__content" id="tabs">
+        <div 
+        class="tabs text-types__content" 
+        data-controller="tabs" 
+        data-tabs-active-btn-class="tabs__btn_active"
+        data-tabs-active-content-class="tabs__content_active"
+        >
             <div class="tabs__btns-block">
-                <button class="tabs__btn tabs__btn_active" data-tabs="desktop">
+                <button 
+                class="tabs__btn tabs__btn_active"
+                data-tabs="desktop" 
+                data-tabs-target="btn" 
+                data-action="click->tabs#handler"
+                >
                     Десктоп
                 </button>
-                <button class="tabs__btn" data-tabs="phone">
+                <button 
+                class="tabs__btn"
+                data-tabs="phone" 
+                data-tabs-target="btn" 
+                data-action="click->tabs#handler"
+                >
                     Телефон
                 </button>
-                <span class="tabs__marker"></span>
+                <span class="tabs__marker" data-tabs-target="marker"></span>
             </div>
-            <div class="tabs__content tabs__content_active" data-content="desktop">
+            <div 
+            class="tabs__content tabs__content_active" 
+            data-content="desktop" 
+            data-tabs-target="content"
+            >
                 <h1 class="text-types__header-extra-lg text-types__text-item">Текст заголовка</h1>
                 <h2 class="text-types__header-lg text-types__text-item">Текст заголовка</h2>
                 <h3 class="text-types__header-md text-types__text-item">Текст заголовка</h3>
@@ -85,7 +104,11 @@
                 <p class="text-types__text-md text-types__text-item">Основной текст</p>
                 <p class="text-types__text-sm text-types__text-item">Вспомогательный текст</p>
             </div>
-            <div class="tabs__content" data-content="phone">
+            <div 
+            class="tabs__content" 
+            data-content="phone" 
+            data-tabs-target="content"
+            >
                 <h1 class="text-types__header-extra-lg-m text-types__text-item">Текст заголовка</h1>
                 <h2 class="text-types__header-lg-m text-types__text-item">Текст заголовка</h2>
                 <h3 class="text-types__header-md-m text-types__text-item">Текст заголовка</h3>
@@ -105,8 +128,16 @@
         <div class="ui__item">
             <h3 class="section-subheader">Текстовое поле</h3>
             <div class="ui__input-group">
-                <div class="input-box" id="input-box">
-                    <input type="text" id="input" required>
+                <div 
+                class="input-box" 
+                data-controller="input"
+                data-input-active-class="input-box_invalid"
+                >
+                    <input 
+                    type="text" 
+                    required
+                    data-action="input#handler"
+                    >
                     <span class="input-box__placeholder">E-mail</span>
                     <span class="input-box__error">Error: E-mail is not valid!</span>
                 </div>
@@ -132,16 +163,22 @@
             <h3 class="section-subheader">Выпадающий список</h3>
             <p class="ui__text">Компонент состоит из текстового поля и выпадающей подсказки</p>
            <div class="ui__select-group">
-                <div class="select" id="select">
-                    <button class="select__header">
-                        <span class="select__result">Выбeрите что-нибудь</span>
+                <div 
+                class="select"
+                data-controller="select"
+                data-select-state-value="false"
+                data-select-active-select-class="select_active"
+                data-select-active-option-class="select__option_active"
+                >
+                    <button class="select__header" data-action="click->select#toggle">
+                        <span class="select__result" data-select-target="result">Выбeрите что-нибудь</span>
                         <span class="select__icon"></span>
                     </button>
                     <div class="select__body">
-                        <button class="select__option">Пункт первый</button>
-                        <button class="select__option">Пункт второй</button>
-                        <button class="select__option">Пункт третий</button>
-                        <button class="select__option">Пункт четвертый</button>
+                        <button class="select__option" data-select-target="option">Пункт первый</button>
+                        <button class="select__option" data-select-target="option">Пункт второй</button>
+                        <button class="select__option" data-select-target="option">Пункт третий</button>
+                        <button class="select__option" data-select-target="option">Пункт четвертый</button>
                     </div>
                 </div>
                 
@@ -219,8 +256,15 @@
 
         <div class="ui__item">
             <h3 class="section-subheader">Аккордеон</h3>
-            <div class="accardeon" id="accardeon">
-                <button class="accardeon__info">
+            <div 
+            class="accardeon"
+            data-controller="accardeon"
+            data-accardeon-active-class="accardeon_active"
+            >
+                <button 
+                class="accardeon__info"
+                data-action="click->accardeon#handler"
+                >
                 Аккордеон
                 <span class="accardeon__icon"></span>
                 </button>
