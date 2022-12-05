@@ -8,7 +8,8 @@
         <title>test</title>
     </head>
 
-    <body>
+    <body 
+    data-controller="burger">
 
         <header сlass="header">
             <div class="container header__container">
@@ -19,7 +20,10 @@
                         <p class="logo__subtitle">Сергей Андреевич</p>
                     </div>
                 </div>
-                <button class="burger header__burger" id="burger">
+                <button 
+                class="burger header__burger"
+                data-action="click->burger#handlerOpen"
+                >
                     <span class="burger__line"></span>
                     <span class="burger__line"></span>
                 </button>
@@ -27,8 +31,15 @@
         </header>
 
         <div class="container main-container">
-            <div class="burger-menu" id="burger-menu">
-                <button class="burger-menu__close"></button>
+            <div 
+            class="burger-menu" 
+            data-burger-target="menu"
+            >
+                <button 
+                class="burger-menu__close"
+                data-action="click->burger#handlerClose"
+                >
+                </button>
                 <div class="burger-menu__info">
                     <div class="burger-menu__info-left">
                         <img src="./img/logo.png" alt="logo" class="burger-menu__logo">
