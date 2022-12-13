@@ -1,0 +1,59 @@
+@import '../../../styles/variables.scss';
+
+.button {
+    padding: 16px 32px;
+    position: relative;
+    left: 0;
+    top: 0;
+    background-image: linear-gradient(45deg, #DD80ED 0%, #3D28E3 100%);
+    border-radius: 32px;
+    color: $color-white;
+    transition: opacity .3s ease-in;
+    z-index: 100;
+    max-width: 148px;
+
+    
+    &::before {
+        content: ' ';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: linear-gradient(225deg, #DD80ED 0%, #3D28E3 100%);
+        border-radius: 32px;
+        z-index: -100;
+        opacity: 0;
+        transition: opacity .3s ease-in;
+    }
+    
+    &:hover, &:focus  {
+        outline: none;
+        &::before {
+            opacity: 1;
+        }
+    }
+    
+    &:active {
+        background: linear-gradient(206.57deg, #DD80ED 0%, #3D28E3 83.33%);
+        &::before {
+            opacity: 0;
+        }
+    }
+    
+    &:disabled {
+        background: #CBCBCC;
+        cursor: auto;
+        &::before {
+            opacity: 0;
+        }
+    }
+}
+
+.button--hover {
+    background-image: linear-gradient(225deg, #DD80ED 0%, #3D28E3 100%);
+}
+
+.button--active {
+    background: linear-gradient(206.57deg, #DD80ED 0%, #3D28E3 83.33%);
+}

@@ -1,0 +1,22 @@
+@import '../../styles/variables.scss';
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-column: span 12;
+
+    margin: $spacing-section 0 $spacing-md;
+}
+
+@media (max-width: 1199px) {
+    .footer {
+        margin: 0 0 $spacing-md;
+    }
+}
+
+@media (max-width: 735px) {
+    .footer {
+        margin: 0 0 $spacing-xs;
+    }
+}

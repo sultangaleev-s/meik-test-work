@@ -1,0 +1,63 @@
+@import '../../../styles/variables.scss';
+
+.radio {
+    position: relative;
+    top: 0;
+    left: 0;
+    padding-left: 40px;
+
+    & input {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+    }
+
+    & label {
+        display: inline-flex;
+        align-items: center;
+        user-select: none;
+        cursor: pointer;
+    }
+
+    & label::before {
+        content: ' ';
+        display: inline-block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background-color: transparent;
+        border: 2px solid $color-blue;
+    }
+
+    & label::after {
+        content: ' ';
+        display: inline-block;
+        position: absolute;
+        left: 8px;
+        top: 8px;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: $color-blue;
+        opacity: 0;
+    }
+
+    & input:checked+label::after {
+        opacity: 1;
+    }
+
+    & input:disabled+label::before {
+    border-color: $color-dark-gray;
+    }
+
+    & input:disabled+label {
+        cursor: auto;
+    }
+
+    & input:focus+label::before {
+        outline: 1px solid $color-blue;
+    }
+}

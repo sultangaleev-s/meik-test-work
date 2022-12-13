@@ -1,0 +1,78 @@
+@import '../../../styles/variables.scss';
+
+.select {
+    position: relative;
+    left: 0;
+    top: 0; 
+}
+
+.select__header {
+    border-bottom: 2px solid $color-dark-gray;
+    padding-bottom: 6px;
+    transition: border-color $transition;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+
+    &:hover, &:focus {
+        border-color: $color-blue;
+        outline: none;
+    }
+}
+
+
+.select__icon {
+    position: absolute;
+    right: 0;
+    bottom: 12px;
+    width: 9px;
+    height: 6px;
+    background-image: url('../../../../public/img/arrow.svg');
+    background-position: center center;
+    background-size: cover;
+}
+
+.select__body {
+    display: none;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: $color-white;
+    z-index: 300;
+}
+
+.select__option {
+    padding: 8px 24px;
+    cursor: pointer;
+    transition: background-color $transition, color $transition;
+    width: 100%;
+    text-align: left;
+
+    &:hover, &:focus {
+        background-color: $color-blue;
+        color: $color-white;
+        outline: none;
+    }
+}
+
+
+.select__option--active {
+    color: $color-blue;
+}
+
+.select__option:not(:last-child) {
+    margin-bottom: 16px;
+}
+
+.select--active .select__body {
+    display: block;
+}
+
+.select--active .select__header {
+    border-bottom-color: $color-blue;
+}
+
+.select--active .select__icon {
+    transform: rotate(180deg);
+}
